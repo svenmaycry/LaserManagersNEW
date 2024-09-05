@@ -1,0 +1,151 @@
+.swiper {
+
+  &-button-prev, &-button-next {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+
+    &::after {
+      content: '';
+    }
+
+    &:hover, &:focus {
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      transform: scale(1.1);
+      outline: none;
+    }
+  }
+
+  &-button-prev {
+    background: $mainWhiteColor url('https://svgshare.com/i/18u5.svg') center / 12px no-repeat;
+  }
+
+  &-button-next {
+    background: $mainWhiteColor url('https://svgshare.com/i/18tt.svg') center / 12px no-repeat;
+  }
+
+  &-button-disabled {
+    opacity: .35;
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  &--banner {
+    position: relative;
+    border-radius: 12px;
+    height: 100%;
+
+    &:hover, &:focus {
+      .swiper-button-prev, .swiper-button-next {
+        opacity: 1;
+      }
+    }
+
+    .swiper {
+
+      &-button-prev, &-button-next {
+        top: 51%;
+        opacity: 0;
+      }
+
+      &-button-prev {
+        left: 10px;
+      }
+
+      &-button-next {
+        right: 10px;
+      }
+
+      &-pagination {
+        cursor: pointer;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+
+        &-bullet {
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  &--about {
+    position: static;
+
+    .swiper {
+      &-button-prev, &-button-next {
+        top: 27px;
+      }
+
+      &-button-prev {
+        left: auto;
+        right: 63px;
+      }
+
+      &-button-next {
+        left: auto;
+        right: 7px;
+      }
+    }
+  }
+
+  &--categories {
+    position: static;
+
+    .swiper {
+      &-button-prev, &-button-next {
+        top: 25px;
+      }
+
+      &-button-prev {
+        left: auto;
+        right: 98px;
+      }
+
+      &-button-next {
+        left: auto;
+        right: 42px;
+      }
+    }
+  }
+
+  &--blogger {
+    position: static;
+
+    .swiper {
+      &-button-prev, &-button-next {
+        top: inherit;
+        bottom: -48px;
+      }
+
+      &-button-prev {
+        left: auto;
+        right: 98px;
+      }
+
+      &-button-next {
+        left: auto;
+        right: 42px;
+      }
+
+      &-scrollbar {
+        position: absolute;
+        left: 33px;
+        bottom: -35px;
+        width: 88%;
+        height: 2px;
+        z-index: 18;
+
+        &-drag {
+          top: -2px;
+          height: 5px;
+          background: #2e1b1b;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
